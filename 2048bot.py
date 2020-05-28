@@ -16,17 +16,20 @@ i = randint(0, 3)
 
 while True:
     # Send different keys to the game according to random number generated
-    if i == 0:
-        game.send_keys(Keys.UP)
-    elif i == 1:
-        game.send_keys(Keys.DOWN)
-    elif i == 2:
-        game.send_keys(Keys.LEFT)
-    elif i == 3:
-        game.send_keys(Keys.RIGHT)
-    else:
-        i = 0
-        continue
+    try:
+        if i == 0:
+            game.send_keys(Keys.UP)
+        elif i == 1:
+            game.send_keys(Keys.DOWN)
+        elif i == 2:
+            game.send_keys(Keys.LEFT)
+        elif i == 3:
+            game.send_keys(Keys.RIGHT)
+        else:
+            i = 0
+            continue
+    except:
+        break
 
     try:
         # If game ends, a new class "retry-button" is added.
